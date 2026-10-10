@@ -26,7 +26,7 @@ Here, "live code review" means inspecting the current upstream source and runnin
 - [Successful Excel example](evidence/save_xlsx/saved-files/saved_demo.xlsx)
 - [Example crash log](evidence/slash_txt_batch/stderr.log)
 
-The local profile links are synthetic evidence and are not permanent public URLs. Local workspace paths in published logs are replaced with <workspace>.
+The local profile links are synthetic evidence and are not permanent public URLs. Local workspace paths in published logs are replaced with `<workspace>`.
 
 ## Reproducing from this contribution folder
 
