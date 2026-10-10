@@ -1,0 +1,13 @@
+{
+  "upstream_commit": "e40a45ec2a074b90703b3b4b842c8a3adbd6ada3",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.7",
+  "dependencies": {
+    "requests": "2.34.2",
+    "pandas": "2.3.3",
+    "openpyxl": "3.1.5",
+    "requests-futures": "1.1.0"
+  },
+  "source_changes": "",
+  "scope": "Real upstream search/save code with loopback synthetic HTTP. Not OS-level sandboxing."
+}

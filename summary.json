@@ -1,0 +1,224 @@
+[
+  {
+    "case": "save_txt",
+    "arguments": [
+      "--txt",
+      "saved_demo"
+    ],
+    "exit_code": 0,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/saved_demo"
+      }
+    ],
+    "saved_files": [
+      "saved_demo.txt"
+    ],
+    "error": null
+  },
+  {
+    "case": "save_csv",
+    "arguments": [
+      "--csv",
+      "saved_demo"
+    ],
+    "exit_code": 0,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/saved_demo"
+      }
+    ],
+    "saved_files": [
+      "saved_demo.csv"
+    ],
+    "error": null
+  },
+  {
+    "case": "save_xlsx",
+    "arguments": [
+      "--xlsx",
+      "saved_demo"
+    ],
+    "exit_code": 0,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/saved_demo"
+      }
+    ],
+    "saved_files": [
+      "saved_demo.xlsx"
+    ],
+    "error": null
+  },
+  {
+    "case": "missing_profile",
+    "arguments": [
+      "--csv",
+      "missing_demo"
+    ],
+    "exit_code": 0,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/missing_demo"
+      }
+    ],
+    "saved_files": [
+      "missing_demo.csv"
+    ],
+    "error": null
+  },
+  {
+    "case": "save_batch",
+    "arguments": [
+      "--txt",
+      "first_demo",
+      "second_demo"
+    ],
+    "exit_code": 0,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/first_demo"
+      },
+      {
+        "method": "GET",
+        "path": "/profile/second_demo"
+      }
+    ],
+    "saved_files": [
+      "second_demo.txt",
+      "first_demo.txt"
+    ],
+    "error": null
+  },
+  {
+    "case": "slash_txt_batch",
+    "arguments": [
+      "--txt",
+      "a/b",
+      "second_demo"
+    ],
+    "exit_code": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/a/b"
+      }
+    ],
+    "saved_files": [],
+    "error": "FileNotFoundError: [Errno 2] No such file or directory: 'a/b.txt'"
+  },
+  {
+    "case": "slash_csv_batch",
+    "arguments": [
+      "--csv",
+      "a/b",
+      "second_demo"
+    ],
+    "exit_code": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/a/b"
+      }
+    ],
+    "saved_files": [],
+    "error": "FileNotFoundError: [Errno 2] No such file or directory: 'a/b.csv'"
+  },
+  {
+    "case": "slash_xlsx_batch",
+    "arguments": [
+      "--xlsx",
+      "a/b",
+      "second_demo"
+    ],
+    "exit_code": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/a/b"
+      }
+    ],
+    "saved_files": [],
+    "error": "OSError: Cannot save file into a non-existent directory: 'a'"
+  },
+  {
+    "case": "missing_output_parent",
+    "arguments": [
+      "--txt",
+      "--output",
+      "nonexistent/results.txt",
+      "saved_demo"
+    ],
+    "exit_code": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/saved_demo"
+      }
+    ],
+    "saved_files": [],
+    "error": "FileNotFoundError: [Errno 2] No such file or directory: 'nonexistent/results.txt'"
+  },
+  {
+    "case": "output_is_directory",
+    "arguments": [
+      "--txt",
+      "--output",
+      "directory",
+      "saved_demo"
+    ],
+    "exit_code": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/saved_demo"
+      }
+    ],
+    "saved_files": [],
+    "error": "IsADirectoryError: [Errno 21] Is a directory: 'directory'"
+  },
+  {
+    "case": "read_only_output",
+    "arguments": [
+      "--txt",
+      "--output",
+      "readonly/results.txt",
+      "saved_demo"
+    ],
+    "exit_code": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/saved_demo"
+      }
+    ],
+    "saved_files": [],
+    "error": "PermissionError: [Errno 13] Permission denied: 'readonly/results.txt'"
+  },
+  {
+    "case": "folder_is_file",
+    "arguments": [
+      "--txt",
+      "--folderoutput",
+      "blocked",
+      "first_demo",
+      "second_demo"
+    ],
+    "exit_code": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/profile/first_demo"
+      }
+    ],
+    "saved_files": [
+      "blocked"
+    ],
+    "error": "FileExistsError: [Errno 17] File exists: 'blocked'"
+  }
+]

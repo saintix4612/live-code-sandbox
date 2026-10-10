@@ -1,0 +1,10 @@
+[
+  {
+    "method": "GET",
+    "path": "/profile/first_demo"
+  },
+  {
+    "method": "GET",
+    "path": "/profile/second_demo"
+  }
+]

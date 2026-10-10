@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<workspace>/outputs/Sherlock-Save-Investigation/bootstrap.py", line 24, in <module>
+    cli.main()
+    ~~~~~~~~^^
+  File "<workspace>/work/sherlock-save-investigation/sherlock_project/sherlock.py", line 830, in main
+    os.makedirs(args.folderoutput, exist_ok=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 236, in makedirs
+FileExistsError: [Errno 17] File exists: 'blocked'

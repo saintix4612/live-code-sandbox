@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "<workspace>/outputs/Sherlock-Save-Investigation/bootstrap.py", line 24, in <module>
+    cli.main()
+    ~~~~~~~~^^
+  File "<workspace>/work/sherlock-save-investigation/sherlock_project/sherlock.py", line 927, in main
+    DataFrame.to_excel(f"{username}.xlsx", sheet_name="sheet1", index=False)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/santi/Library/Application Support/pipx/venvs/sherlock-project/lib/python3.14/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/santi/Library/Application Support/pipx/venvs/sherlock-project/lib/python3.14/site-packages/pandas/core/generic.py", line 2439, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/santi/Library/Application Support/pipx/venvs/sherlock-project/lib/python3.14/site-packages/pandas/io/formats/excel.py", line 943, in write
+    writer = ExcelWriter(
+        writer,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "/Users/santi/Library/Application Support/pipx/venvs/sherlock-project/lib/python3.14/site-packages/pandas/io/excel/_openpyxl.py", line 61, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        path,
+        ^^^^^
+    ...<3 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/santi/Library/Application Support/pipx/venvs/sherlock-project/lib/python3.14/site-packages/pandas/io/excel/_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ~~~~~~~~~~^
+        path, mode, storage_options=storage_options, is_text=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/santi/Library/Application Support/pipx/venvs/sherlock-project/lib/python3.14/site-packages/pandas/io/common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/santi/Library/Application Support/pipx/venvs/sherlock-project/lib/python3.14/site-packages/pandas/io/common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'a'

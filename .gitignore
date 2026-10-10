@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+sherlock-source/
+.DS_Store
